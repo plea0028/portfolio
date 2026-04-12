@@ -1,0 +1,151 @@
+:root {
+  --bg: #0a0a0a;
+  --text: #ffffff;
+  --muted: #8d8d8d;
+  --accent: #ff3b30;
+  --card-width: min(85vw, 420px);
+}
+
+.portfolio-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 0%, #1f1f1f 0%, #0a0a0a 45%, #050505 100%);
+  color: var(--text);
+  font-family: 'Trebuchet MS', 'Gill Sans', sans-serif;
+  padding-bottom: 1.5rem;
+}
+
+.portfolio-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.portfolio-logo {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.menu-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(255, 59, 48, 0.65);
+}
+
+.portfolio-hero {
+  padding: 0 1.5rem 2rem;
+}
+
+.portfolio-greeting {
+  margin: 0;
+  font-size: clamp(2rem, 7vw, 2.7rem);
+  font-weight: 700;
+  line-height: 1.12;
+  max-width: 12ch;
+}
+
+.portfolio-description {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  max-width: 44ch;
+  line-height: 1.5;
+}
+
+.portfolio-carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: var(--card-width);
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 1.5rem;
+  scrollbar-width: none;
+}
+
+.portfolio-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.portfolio-card {
+  position: relative;
+  height: min(70vh, 450px);
+  border-radius: 24px;
+  overflow: hidden;
+  scroll-snap-align: center;
+  background: #191919;
+}
+
+.portfolio-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-card-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.3) 60%, transparent);
+}
+
+.portfolio-category {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.portfolio-title {
+  margin: 0.25rem 0 0;
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+.portfolio-footer {
+  padding: 1.5rem;
+}
+
+.portfolio-contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid #333;
+  border-radius: 999px;
+  padding: 1rem 1.2rem;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.portfolio-contact-btn:hover {
+  border-color: #4d4d4d;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+@media (min-width: 900px) {
+  .portfolio-page {
+    padding-bottom: 2rem;
+  }
+
+  .portfolio-nav,
+  .portfolio-hero,
+  .portfolio-footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .portfolio-carousel {
+    gap: 1.25rem;
+    padding: 0 2rem;
+  }
+}
