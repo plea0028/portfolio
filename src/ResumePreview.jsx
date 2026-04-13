@@ -19,7 +19,11 @@ function ResumePreview() {
           className="resume-preview-frame"
           src={`${resume}#view=FitH`}
           title="James Pleau resume preview"
+          loading="lazy"
         />
+        <p className="resume-preview-fallback">
+          If the preview does not load on your device, use the Download button above.
+        </p>
       </section>
     </main>
   );
